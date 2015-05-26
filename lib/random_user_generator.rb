@@ -1,5 +1,6 @@
 require "json"
 require "ostruct"
+require "random_user_generator/core_extensions/open_struct/hash_assignment"
 
 require "faraday"
 require 'faraday_middleware'
