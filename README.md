@@ -1,8 +1,8 @@
-# RandomUserGenerator
+# Random User Generator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/random_user_generator`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Ruby wrapper for RandomUser API. See <https://randomuser.me>
 
-TODO: Delete this and the text above, and describe your gem
+API information can be found at <https://randomuser.me/documentation>
 
 ## Installation
 
@@ -23,8 +23,24 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-result = RandomUserGenerator.generate
-result.gender # => "Male" or "Female"
+# Generate a random user
+user = RandomUserGenerator.generate
+user.email
+user.name.first
+
+# Generate multiple random users
+users = RandomUserGenerator.generate(results: 2)
+
+# Generate a random female/male user
+female_user = RandomUserGenerator.generate_female
+male_user   = RandomUserGenerator.generate_male
+
+# Generate random users base on global options
+RandomUserGenerator.configure do |config|
+  config.gender = 'female'
+end
+female_user = RandomUserGenerator.generate
+male_user   = RandomUserGenerator.generate(gender: 'male') # overridden by inline
 ```
 
 ## Development
@@ -40,3 +56,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Copyright
+Copyright (c) 2015 Samnang Chhun.
+See [LICENSE][] for details.
+
+[license]: LICENSE.txt
