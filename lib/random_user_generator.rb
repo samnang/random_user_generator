@@ -3,10 +3,11 @@ require "ostruct"
 require "faraday"
 require 'faraday_middleware'
 
-require "random_user_generator/version"
 require "random_user_generator/configuration"
 require "random_user_generator/client"
 require "random_user_generator/user"
+
+require "random_user_generator/version"
 
 module RandomUserGenerator
   extend Configuration

@@ -1,6 +1,6 @@
 module RandomUserGenerator
   module Configuration
-    OPTIONS = [:api_version, :key, :nat, :gender]
+    OPTIONS = [:api_version, :key, :nat, :gender, :seed]
 
     attr_accessor *OPTIONS
 
@@ -19,6 +19,7 @@ module RandomUserGenerator
       self.key         = nil
       self.nat         = nil
       self.gender      = nil
+      self.seed        = nil
     end
   end
 end
