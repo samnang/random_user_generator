@@ -6,7 +6,6 @@ require 'faraday_middleware'
 
 require "random_user_generator/configuration"
 require "random_user_generator/client"
-require "random_user_generator/user"
 
 require "random_user_generator/version"
 
@@ -15,7 +14,7 @@ module RandomUserGenerator
 
   def self.generate(params = {})
     results = client.request(params)
-    users   = JSON.parse(results.to_json, object_class: User)
+    users   = JSON.parse(results.to_json, object_class: OpenStruct)
 
     params[:results] ? users : users.first
   end
