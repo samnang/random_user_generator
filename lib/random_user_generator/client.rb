@@ -3,14 +3,14 @@ module RandomUserGenerator
     HOST = 'http://api.randomuser.me'
 
     def request(params)
-      response = connection.get api_url, params
+      response = connection.get(api_url, params)
       response.body['results'].map { |u| u['user'] }
     end
 
     private
 
     def connection
-      Faraday.new(HOST, params: params) do |faraday|
+      Faraday.new(HOST, params: RandomUserGenerator.options) do |faraday|
         faraday.response :json, content_type: /\bjson$/
 
         faraday.use     FaradayMiddleware::FollowRedirects
@@ -20,10 +20,6 @@ module RandomUserGenerator
 
     def api_url
       "/#{RandomUserGenerator.api_version}"
-    end
-
-    def params
-      RandomUserGenerator.options.reject { |option, _| option == :api_version }
     end
   end
 end

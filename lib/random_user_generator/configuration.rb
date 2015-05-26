@@ -1,7 +1,8 @@
 module RandomUserGenerator
   module Configuration
-    OPTIONS = [:api_version, :key, :nat, :gender, :seed]
+    OPTIONS = [:key, :nat, :gender, :seed]
 
+    attr_accessor :api_version
     attr_accessor *OPTIONS
 
     def configure

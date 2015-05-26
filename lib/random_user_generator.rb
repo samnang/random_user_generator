@@ -20,11 +20,13 @@ module RandomUserGenerator
   end
 
   def self.generate_female(params = {})
-    generate(gender: 'female')
+    params.merge!(gender: 'female')
+    generate(params)
   end
 
   def self.generate_male(params = {})
-    generate(gender: 'male')
+    params.merge!(gender: 'male')
+    generate(params)
   end
 
   def self.client
