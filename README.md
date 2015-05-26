@@ -1,5 +1,8 @@
 # Random User Generator
 
+[![Build Status](https://travis-ci.org/samnang/random_user_generator.svg?branch=master)](https://travis-ci.org/samnang/random_user_generator)
+[![Code Climate](https://codeclimate.com/github/samnang/random_user_generator/badges/gpa.svg)](https://codeclimate.com/github/samnang/random_user_generator)
+
 A Ruby wrapper for RandomUser API. See <https://randomuser.me>
 
 API information can be found at <https://randomuser.me/documentation>
