@@ -1,3 +1,4 @@
+require "json"
 require "ostruct"
 
 require "faraday"
@@ -14,7 +15,7 @@ module RandomUserGenerator
 
   def self.generate(params = {})
     results = client.request(params)
-    users   = results.map { |u| User.new(u) }
+    users   = JSON.parse(results.to_json, object_class: User)
 
     params[:results] ? users : users.first
   end
