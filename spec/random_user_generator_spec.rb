@@ -45,4 +45,16 @@ describe RandomUserGenerator do
     expect(female.gender).to eq('female')
     expect(male.gender).to eq('male')
   end
+
+  context 'when api version < 1.0' do
+    it 'be able to handle the parsing with older versions' do
+      RandomUserGenerator.configure do |config|
+        config.api_version = '0.8'
+      end
+
+      result = RandomUserGenerator.generate
+
+      expect(result.email).not_to be_empty
+    end
+  end
 end
