@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "faraday", ">= 0.9.0"
-  spec.add_dependency "faraday_middleware", ">= 0.9.0"
+  spec.add_dependency "faraday_middleware", "1.0.0"
 
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", ">= 3.5.0"
